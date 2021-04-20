@@ -1,0 +1,15 @@
+<!--First USER.HTML - CHILD TEMPLATE-->
+{% extends "base.html" %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+    {% endif %}
+    {% for user in users %}
+        <div>
+            <p>
+                {{ user.username }}'s post: <b>{{ user.posts.first }}</b>
+            </p>
+        </div> 
+    {% endfor %}
+{% endblock %}

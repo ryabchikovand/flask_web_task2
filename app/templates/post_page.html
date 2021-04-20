@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Post</h1>
+    <div>
+        <a href="{{ url_for('edit_post', id = post.id) }}">Edit Post</a> |
+        <a href="{{ url_for('delete_post', id = post.id) }}">Delete Post</a> |
+    </div>
+    <div>
+        <p>
+            <b>{{ post.title }}</b>
+        </p>
+        <p>
+            {{ post.body }}
+        </p>
+        <p>
+            {{ post.author }}
+        </p>
+        <p>
+            {{ post.time_updated }}
+        </p>
+    </div>
+{% endblock %}
